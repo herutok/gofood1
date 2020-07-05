@@ -1,1 +1,100 @@
-%3C%3Fphp%0A%0Afunction%20request%28%24url%2C%20%24token%20%3D%20null%2C%20%24data%20%3D%20null%2C%20%24pin%20%3D%20null%2C%20%24otpsetpin%20%3D%20null%2C%20%24uuid%20%3D%20null%29%7B%0A%0A%24header%5B%5D%20%3D%20%22Host%3A%20api.gojekapi.com%22%3B%0A%24header%5B%5D%20%3D%20%22User-Agent%3A%20okhttp%2F3.10.0%22%3B%0A%24header%5B%5D%20%3D%20%22Accept%3A%20application%2Fjson%22%3B%0A%24header%5B%5D%20%3D%20%22Accept-Language%3A%20id-ID%22%3B%0A%24header%5B%5D%20%3D%20%22Content-Type%3A%20application%2Fjson%3B%20charset%3DUTF-8%22%3B%0A%24header%5B%5D%20%3D%20%22X-AppVersion%3A%203.55.4%22%3B%0A%24header%5B%5D%20%3D%20%22X-UniqueId%3A%20%22.time%28%29.%2257%22.mt_rand%281000%2C9999%29%3B%0A%24header%5B%5D%20%3D%20%22Connection%3A%20keep-alive%22%3B%0A%24header%5B%5D%20%3D%20%22X-User-Locale%3A%20id_ID%22%3B%0A%24header%5B%5D%20%3D%20%22X-Location%3A%20-6.9170289%2C107.6098005%22%3B%0A%24header%5B%5D%20%3D%20%22X-Location-Accuracy%3A%203.0%22%3B%0Aif%20%28%24pin%29%3A%0A%24header%5B%5D%20%3D%20%22pin%3A%20%24pin%22%3B%0A%20%20%20%20endif%3B%0Aif%20%28%24token%29%3A%0A%24header%5B%5D%20%3D%20%22Authorization%3A%20Bearer%20%24token%22%3B%0Aendif%3B%0Aif%20%28%24otpsetpin%29%3A%0A%24header%5B%5D%20%3D%20%22otp%3A%20%24otpsetpin%22%3B%0Aendif%3B%0Aif%20%28%24uuid%29%3A%0A%24header%5B%5D%20%3D%20%22User-uuid%3A%20%24uuid%22%3B%0Aendif%3B%0A%24c%20%3D%20curl_init%28%22https%3A%2F%2Fapi.gojekapi.com%22.%24url%29%3B%0A%20%20%20%20curl_setopt%28%24c%2C%20CURLOPT_FOLLOWLOCATION%2C%20true%29%3B%0A%20%20%20%20curl_setopt%28%24c%2C%20CURLOPT_SSL_VERIFYPEER%2C%20false%29%3B%0A%20%20%20%20if%20%28%24data%29%3A%0A%20%20%20%20curl_setopt%28%24c%2C%20CURLOPT_POSTFIELDS%2C%20%24data%29%3B%0A%20%20%20%20curl_setopt%28%24c%2C%20CURLOPT_POST%2C%20true%29%3B%0A%20%20%20%20endif%3B%0A%20%20%20%20curl_setopt%28%24c%2C%20CURLOPT_SSL_VERIFYHOST%2C%200%29%3B%0A%20%20%20%20curl_setopt%28%24c%2C%20CURLOPT_RETURNTRANSFER%2C%201%29%3B%0A%20%20%20%20curl_setopt%28%24c%2C%20CURLOPT_HEADER%2C%20true%29%3B%0A%20%20%20%20curl_setopt%28%24c%2C%20CURLOPT_HTTPHEADER%2C%20%24header%29%3B%0A%20%20%20%20%24response%20%3D%20curl_exec%28%24c%29%3B%0A%20%20%20%20%24httpcode%20%3D%20curl_getinfo%28%24c%29%3B%0A%20%20%20%20if%20%28%21%24httpcode%29%0A%20%20%20%20%20%20%20%20return%20false%3B%0A%20%20%20%20else%20%7B%0A%20%20%20%20%20%20%20%20%24header%20%3D%20substr%28%24response%2C%200%2C%20curl_getinfo%28%24c%2C%20CURLINFO_HEADER_SIZE%29%29%3B%0A%20%20%20%20%20%20%20%20%24body%20%20%20%3D%20substr%28%24response%2C%20curl_getinfo%28%24c%2C%20CURLINFO_HEADER_SIZE%29%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20%24json%20%3D%20json_decode%28%24body%2C%20true%29%3B%0A%20%20%20%20return%20%24body%3B%0A%7D%0Afunction%20save%28%24filename%2C%20%24content%29%0A%7B%0A%20%20%20%20%24save%20%3D%20fopen%28%24filename%2C%20%22a%22%29%3B%0A%20%20%20%20fputs%28%24save%2C%20%22%24content%5Cr%5Cn%22%29%3B%0A%20%20%20%20fclose%28%24save%29%3B%0A%7D%0Afunction%20nama%28%29%0A%20%20%20%20%7B%0A%20%20%20%20%24ch%20%3D%20curl_init%28%29%3B%0A%20%20%20%20curl_setopt%28%24ch%2C%20CURLOPT_URL%2C%20%22http%3A%2F%2Fninjaname.horseridersupply.com%2Fafrican_name.php%22%29%3B%0A%20%20%20%20curl_setopt%28%24ch%2C%20CURLOPT_SSL_VERIFYPEER%2C%200%29%3B%0A%20%20%20%20curl_setopt%28%24ch%2C%20CURLOPT_SSL_VERIFYHOST%2C%200%29%3B%0A%20%20%20%20curl_setopt%28%24ch%2C%20CURLOPT_RETURNTRANSFER%2C%201%29%3B%0A%20%20%20%20curl_setopt%28%24ch%2C%20CURLOPT_FOLLOWLOCATION%2C%201%29%3B%0A%20%20%20%20%24ex%20%3D%20curl_exec%28%24ch%29%3B%0A%20%20%20%20%2F%2F%20%24rand%20%3D%20json_decode%28%24rnd_get%2C%20true%29%3B%0A%20%20%20%20preg_match_all%28%27~%28%26bull%3B%20%28.%2A%3F%29%3Cbr%2F%3E%26bull%3B%20%29~%27%2C%20%24ex%2C%20%24name%29%3B%0A%20%20%20%20return%20%24name%5B2%5D%5Bmt_rand%280%2C%2014%29%20%5D%3B%0A%20%20%20%20%7D%0Afunction%20getStr%28%24a%2C%24b%2C%24c%29%7B%0A%09%24a%20%3D%20%40explode%28%24a%2C%24c%29%5B1%5D%3B%0A%09return%20%40explode%28%24b%2C%24a%29%5B0%5D%3B%0A%7D%0Afunction%20getStr1%28%24a%2C%24b%2C%24c%2C%24d%29%7B%0A%20%20%20%20%20%20%20%20%24a%20%3D%20%40explode%28%24a%2C%24c%29%5B%24d%5D%3B%0A%20%20%20%20%20%20%20%20return%20%40explode%28%24b%2C%24a%29%5B0%5D%3B%0A%7D%0Afunction%20color%28%24color%20%3D%20%22default%22%20%2C%20%24text%29%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%24arrayColor%20%3D%20array%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%27grey%27%20%20%20%20%20%20%3D%3E%20%271%3B30%27%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%27red%27%20%20%20%20%20%20%20%3D%3E%20%271%3B31%27%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%27green%27%20%20%20%20%20%3D%3E%20%271%3B32%27%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%27yellow%27%20%20%20%20%3D%3E%20%271%3B33%27%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%27blue%27%20%20%20%20%20%20%3D%3E%20%271%3B34%27%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%27purple%27%20%20%20%20%3D%3E%20%271%3B35%27%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%27nevy%27%20%20%20%20%20%20%3D%3E%20%271%3B36%27%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%27white%27%20%20%20%20%20%3D%3E%20%271%3B0%27%2C%0A%20%20%20%20%20%20%20%20%29%3B%20%20%0A%20%20%20%20%20%20%20%20return%20%22%5C033%5B%22.%24arrayColor%5B%24color%5D.%22m%22.%24text.%22%5C033%5B0m%22%3B%0A%20%20%20%20%7D%0Afunction%20fetch_value%28%24str%2C%24find_start%2C%24find_end%29%20%7B%0A%09%24start%20%3D%20%40strpos%28%24str%2C%24find_start%29%3B%0A%09if%20%28%24start%20%3D%3D%3D%20false%29%20%7B%0A%09%09return%20%22%22%3B%0A%09%7D%0A%09%24length%20%3D%20strlen%28%24find_start%29%3B%0A%09%24end%20%20%20%20%3D%20strpos%28substr%28%24str%2C%24start%20%2B%24length%29%2C%24find_end%29%3B%0A%09return%20trim%28substr%28%24str%2C%24start%20%2B%24length%2C%24end%29%29%3B%0A%7D%0A%3F%3E%0A
+<?php
+
+function request($url, $token = null, $data = null, $pin = null, $otpsetpin = null, $uuid = null){
+
+$header[] = "Host: api.gojekapi.com";
+$header[] = "User-Agent: okhttp/3.10.0";
+$header[] = "Accept: application/json";
+$header[] = "Accept-Language: id-ID";
+$header[] = "Content-Type: application/json; charset=UTF-8";
+$header[] = "X-AppVersion: 3.55.4";
+$header[] = "X-UniqueId: ".time()."57".mt_rand(1000,9999);
+$header[] = "Connection: keep-alive";
+$header[] = "X-User-Locale: id_ID";
+$header[] = "X-Location: -6.9170289,107.6098005";
+$header[] = "X-Location-Accuracy: 3.0";
+if ($pin):
+$header[] = "pin: $pin";
+    endif;
+if ($token):
+$header[] = "Authorization: Bearer $token";
+endif;
+if ($otpsetpin):
+$header[] = "otp: $otpsetpin";
+endif;
+if ($uuid):
+$header[] = "User-uuid: $uuid";
+endif;
+$c = curl_init("https://api.gojekapi.com".$url);
+    curl_setopt($c, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($c, CURLOPT_SSL_VERIFYPEER, false);
+    if ($data):
+    curl_setopt($c, CURLOPT_POSTFIELDS, $data);
+    curl_setopt($c, CURLOPT_POST, true);
+    endif;
+    curl_setopt($c, CURLOPT_SSL_VERIFYHOST, 0);
+    curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($c, CURLOPT_HEADER, true);
+    curl_setopt($c, CURLOPT_HTTPHEADER, $header);
+    $response = curl_exec($c);
+    $httpcode = curl_getinfo($c);
+    if (!$httpcode)
+        return false;
+    else {
+        $header = substr($response, 0, curl_getinfo($c, CURLINFO_HEADER_SIZE));
+        $body   = substr($response, curl_getinfo($c, CURLINFO_HEADER_SIZE));
+    }
+    $json = json_decode($body, true);
+    return $body;
+}
+function save($filename, $content)
+{
+    $save = fopen($filename, "a");
+    fputs($save, "$content\r\n");
+    fclose($save);
+}
+function nama()
+    {
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, "http://ninjaname.horseridersupply.com/african_name.php");
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    $ex = curl_exec($ch);
+    // $rand = json_decode($rnd_get, true);
+    preg_match_all('~(&bull; (.*?)<br/>&bull; )~', $ex, $name);
+    return $name[2][mt_rand(0, 14) ];
+    }
+function getStr($a,$b,$c){
+	$a = @explode($a,$c)[1];
+	return @explode($b,$a)[0];
+}
+function getStr1($a,$b,$c,$d){
+        $a = @explode($a,$c)[$d];
+        return @explode($b,$a)[0];
+}
+function color($color = "default" , $text)
+    {
+        $arrayColor = array(
+            'grey'      => '1;30',
+            'red'       => '1;31',
+            'green'     => '1;32',
+            'yellow'    => '1;33',
+            'blue'      => '1;34',
+            'purple'    => '1;35',
+            'nevy'      => '1;36',
+            'white'     => '1;0',
+        );  
+        return "\033[".$arrayColor[$color]."m".$text."\033[0m";
+    }
+function fetch_value($str,$find_start,$find_end) {
+	$start = @strpos($str,$find_start);
+	if ($start === false) {
+		return "";
+	}
+	$length = strlen($find_start);
+	$end    = strpos(substr($str,$start +$length),$find_end);
+	return trim(substr($str,$start +$length,$end));
+}
+?>
