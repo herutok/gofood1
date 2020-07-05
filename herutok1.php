@@ -1,1 +1,179 @@
-%3C%3Fphp%0Adate_default_timezone_set%28%27Asia%2FJakarta%27%29%3B%0Ainclude%20%22function.php%22%3B%0Aulang%3A%0A%2F%2F%20function%20change%28%29%7B%0Aecho%20color%28%22green%22%2C%22%5B%5D%20%20%20%20%20%20BISMILLAHIRRAHMANIRRAHIM%20%20%20%20%20%20%5B%5D%5Cn%22%29%3B%0Aecho%20color%28%22yellow%22%2C%22%5B%5D%20%20%20%20%20%20%20%20%20%20BY%20%3A%20HERUTOK%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5B%5D%5Cn%22%29%3B%0Aecho%20color%28%22green%22%2C%22%5B%5D%20%20Time%20%20%3A%20%22.date%28%27%5Bd-m-Y%5D%20%5BH%3Ai%3As%5D%27%29.%22%20%20%20%5B%5D%5Cn%22%29%3B%0Aecho%20color%28%22yellow%22%2C%22%5B%5D%20Format%20Penulisan%20Nomor%2062xxxxxxxx%20%20%5B%5D%5Cn%22%29%3B%0A%20%20%20%20%20%20%20%20%24nama%20%3D%20nama%28%29%3B%0A%20%20%20%20%20%20%20%20%24email%20%3D%20str_replace%28%22%20%22%2C%20%22%22%2C%20%24nama%29%20.%20mt_rand%28100%2C%20999%29%3B%0A%20%20%20%20%20%20%20%20echo%20color%28%22white%22%2C%22%20NOMOR%20%20%3A%20%22%29%3B%0A%20%20%20%20%20%20%20%20%2F%2F%20%24no%20%3D%20trim%28fgets%28STDIN%29%29%3B%0A%20%20%20%20%20%20%20%20%24nohp%20%3D%20trim%28fgets%28STDIN%29%29%3B%0A%20%20%20%20%20%20%20%20%24nohp%20%3D%20str_replace%28%2262%22%2C%2262%22%2C%24nohp%29%3B%0A%20%20%20%20%20%20%20%20%24nohp%20%3D%20str_replace%28%22%28%22%2C%22%22%2C%24nohp%29%3B%0A%20%20%20%20%20%20%20%20%24nohp%20%3D%20str_replace%28%22%29%22%2C%22%22%2C%24nohp%29%3B%0A%20%20%20%20%20%20%20%20%24nohp%20%3D%20str_replace%28%22-%22%2C%22%22%2C%24nohp%29%3B%0A%20%20%20%20%20%20%20%20%24nohp%20%3D%20str_replace%28%22%20%22%2C%22%22%2C%24nohp%29%3B%0A%0A%20%20%20%20%20%20%20%20if%20%28%21preg_match%28%27%2F%5B%5E%2B0-9%5D%2F%27%2C%20trim%28%24nohp%29%29%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28substr%28trim%28%24nohp%29%2C0%2C3%29%3D%3D%2762%27%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24hp%20%3D%20trim%28%24nohp%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20else%20if%20%28substr%28trim%28%24nohp%29%2C0%2C1%29%3D%3D%270%27%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24hp%20%3D%20%2762%27.substr%28trim%28%24nohp%29%2C1%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20elseif%28substr%28trim%28%24nohp%29%2C%200%2C%202%29%3D%3D%2762%27%29%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%24hp%20%3D%20%276%27.substr%28trim%28%24nohp%29%2C%201%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20else%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%24hp%20%3D%20%271%27.substr%28trim%28%24nohp%29%2C0%2C13%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%24data%20%3D%20%27%7B%22email%22%3A%22%27.%24email.%27%40yahoo.com%22%2C%22name%22%3A%22%27.%24nama.%27%22%2C%22phone%22%3A%22%2B%27.%24hp.%27%22%2C%22signed_up_country%22%3A%22ID%22%7D%27%3B%0A%20%20%20%20%20%20%20%20%24register%20%3D%20request%28%22%2Fv5%2Fcustomers%22%2C%20null%2C%20%24data%29%3B%0A%20%20%20%20%20%20%20%20if%28strpos%28%24register%2C%20%27%22otp_token%22%27%29%29%7B%0A%20%20%20%20%20%20%20%20%24otptoken%20%3D%20getStr%28%27%22otp_token%22%3A%22%27%2C%27%22%27%2C%24register%29%3B%0A%20%20%20%20%20%20%20%20echo%20color%28%22white%22%2C%22%20KODE%20OTP..%22%29.%22%5Cn%22%3B%0A%20%20%20%20%20%20%20%20otp%3A%0A%20%20%20%20%20%20%20%20echo%20color%28%22white%22%2C%22%20Otp%20%3A%20%22%29%3B%0A%20%20%20%20%20%20%20%20%24otp%20%3D%20trim%28fgets%28STDIN%29%29%3B%0A%20%20%20%20%20%20%20%20%24data1%20%3D%20%27%7B%22client_name%22%3A%22gojek%3Acons%3Aandroid%22%2C%22data%22%3A%7B%22otp%22%3A%22%27%20.%20%24otp%20.%20%27%22%2C%22otp_token%22%3A%22%27%20.%20%24otptoken%20.%20%27%22%7D%2C%22client_secret%22%3A%2283415d06-ec4e-11e6-a41b-6c40088ab51e%22%7D%27%3B%0A%20%20%20%20%20%20%20%20%24verif%20%3D%20request%28%22%2Fv5%2Fcustomers%2Fphone%2Fverify%22%2C%20null%2C%20%24data1%29%3B%0A%20%20%20%20%20%20%20%20if%28strpos%28%24verif%2C%20%27%22access_token%22%27%29%29%7B%0A%20%20%20%20%20%20%20%20echo%20color%28%22white%22%2C%22BERHASIL%20MENDAFTAR%5Cn%22%29%3B%0A%20%20%20%20%20%20%20%20%24token%20%3D%20getStr%28%27%22access_token%22%3A%22%27%2C%27%22%27%2C%24verif%29%3B%0A%20%20%20%20%20%20%20%20%24uuid%20%3D%20getStr%28%27%22resource_owner_id%22%3A%27%2C%27%2C%27%2C%24verif%29%3B%0A%20%20%20%20%20%20%20%20echo%20color%28%22white%22%2C%22%2B%5D%20Your%20access%20token%20%3A%20%22.%24token.%22%5Cn%5Cn%22%29%3B%0A%20%20%20%20%20%20%20%20save%28%22token.txt%22%2C%24token%29%3B%20%0A%20%20%20%20%20%20%20%20echo%20color%28%22white%22%2C%22%5Cn%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%ACCLAIM%20VOUCHER%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%22%29%3B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22white%22%2C%22CLAIM%20VOUCHER%201..%22%29%3B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22white%22%2C%22%20Please%20wait%22%29%3B%0A%20%20%20%20%20%20%20%20for%28%24a%3D1%3B%24a%3C%3D3%3B%24a%2B%2B%29%7B%0A%20%20%20%20%20%20%20%20echo%20color%28%22white%22%2C%22.%22%29%3B%0A%20%20%20%20%20%20%20%20sleep%2835%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%24code1%20%3D%20request%28%27%2Fgo-promotions%2Fv1%2Fpromotions%2Fenrollments%27%2C%20%24token%2C%20%27%7B%22promo_code%22%3A%22COBAGOFOOD2206%22%7D%27%29%3B%0A%20%20%20%20%20%20%20%20%24message%20%3D%20fetch_value%28%24code1%2C%27%22message%22%3A%22%27%2C%27%22%27%29%3B%0A%20%20%20%20%20%20%20%20if%28strpos%28%24code1%2C%20%27Promo%20kamu%20sudah%20bisa%20dipakai%27%29%29%7B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22green%22%2C%22Message%3A%20%22.%24message%29%3B%0A%20%20%20%20%20%20%20%20goto%20gocar%3B%0A%20%20%20%20%20%20%20%20%7Delse%7B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22white%22%2C%22%20Message%3A%20%22.%24message%29%3B%0A%09gocar%3A%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22white%22%2C%22%20CLAIM%20VOUCHER%202..%20%22%29%3B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22white%22%2C%22%20Please%20wait%22%29%3B%0A%20%20%20%20%20%20%20%20for%28%24a%3D1%3B%24a%3C%3D3%3B%24a%2B%2B%29%7B%0A%20%20%20%20%20%20%20%20echo%20color%28%22white%22%2C%22.%22%29%3B%0A%20%20%20%20%20%20%20%20sleep%285%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%24code1%20%3D%20request%28%27%2Fgo-promotions%2Fv1%2Fpromotions%2Fenrollments%27%2C%20%24token%2C%20%27%7B%22promo_code%22%3A%22COBAGOFOOD2206%22%7D%27%29%3B%0A%20%20%20%20%20%20%20%20%24message%20%3D%20fetch_value%28%24code1%2C%27%22message%22%3A%22%27%2C%27%22%27%29%3B%0A%20%20%20%20%20%20%20%20if%28strpos%28%24code1%2C%20%27Promo%20kamu%20sudah%20bisa%20dipakai.%27%29%29%7B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22green%22%2C%22Message%3A%20%22.%24message%29%3B%0A%20%20%20%20%20%20%20%20goto%20gofood%3B%0A%20%20%20%20%20%20%20%20%7Delse%7B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22white%22%2C%22%20Message%3A%20%22.%24message%29%3B%0A%20%20%20%20%20%20%20%20gofood%3A%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22white%22%2C%22%20CLAIM%20VOUCHER%203..%22%29%3B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22white%22%2C%22%20Please%20wait%22%29%3B%0A%20%20%20%20%20%20%20%20for%28%24a%3D1%3B%24a%3C%3D3%3B%24a%2B%2B%29%7B%0A%20%20%20%20%20%20%20%20echo%20color%28%22white%22%2C%22.%22%29%3B%0A%20%20%20%20%20%20%20%20sleep%280%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%24code1%20%3D%20request%28%27%2Fgo-promotions%2Fv1%2Fpromotions%2Fenrollments%27%2C%20%24token%2C%20%27%7B%22promo_code%22%3A%22%22%7D%27%29%3B%0A%20%20%20%20%20%20%20%20%24message%20%3D%20fetch_value%28%24code1%2C%27%22message%22%3A%22%27%2C%27%22%27%29%3B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22white%22%2C%22%20Message%3A%20%22.%24message%29%3B%0A%20%20%20%20%20%20%20%20sleep%282%29%3B%0A%20%20%20%20%20%20%20%20%24cekvoucher%20%3D%20request%28%27%2Fgopoints%2Fv3%2Fwallet%2Fvouchers%3Flimit%3D14%26page%3D1%27%2C%20%24token%29%3B%0A%20%20%20%20%20%20%20%20%24total%20%3D%20fetch_value%28%24cekvoucher%2C%27%22total_vouchers%22%3A%27%2C%27%2C%27%29%3B%0A%20%20%20%20%20%20%20%20%24voucher1%20%3D%20getStr1%28%27%22title%22%3A%22%27%2C%27%22%2C%27%2C%24cekvoucher%2C%221%22%29%3B%0A%20%20%20%20%20%20%20%20%24voucher2%20%3D%20getStr1%28%27%22title%22%3A%22%27%2C%27%22%2C%27%2C%24cekvoucher%2C%222%22%29%3B%0A%20%20%20%20%20%20%20%20%24voucher3%20%3D%20getStr1%28%27%22title%22%3A%22%27%2C%27%22%2C%27%2C%24cekvoucher%2C%223%22%29%3B%0A%20%20%20%20%20%20%20%20%24voucher4%20%3D%20getStr1%28%27%22title%22%3A%22%27%2C%27%22%2C%27%2C%24cekvoucher%2C%224%22%29%3B%0A%20%20%20%20%20%20%20%20%24voucher5%20%3D%20getStr1%28%27%22title%22%3A%22%27%2C%27%22%2C%27%2C%24cekvoucher%2C%225%22%29%3B%0A%20%20%20%20%20%20%20%20%24voucher6%20%3D%20getStr1%28%27%22title%22%3A%22%27%2C%27%22%2C%27%2C%24cekvoucher%2C%226%22%29%3B%0A%20%20%20%20%20%20%20%20%24voucher7%20%3D%20getStr1%28%27%22title%22%3A%22%27%2C%27%22%2C%27%2C%24cekvoucher%2C%227%22%29%3B%0A%20%20%20%20%20%20%20%20%24voucher8%20%3D%20getStr1%28%27%22title%22%3A%22%27%2C%27%22%2C%27%2C%24cekvoucher%2C%228%22%29%3B%0A%20%20%20%20%20%20%20%20%24voucher9%20%3D%20getStr1%28%27%22title%22%3A%22%27%2C%27%22%2C%27%2C%24cekvoucher%2C%229%22%29%3B%0A%20%20%20%20%20%20%20%20%24voucher10%20%3D%20getStr1%28%27%22title%22%3A%22%27%2C%27%22%2C%27%2C%24cekvoucher%2C%2210%22%29%3B%0A%20%20%20%20%20%20%20%20%24voucher11%20%3D%20getStr1%28%27%22title%22%3A%22%27%2C%27%22%2C%27%2C%24cekvoucher%2C%2211%22%29%3B%0A%20%20%20%20%20%20%20%20%24voucher12%20%3D%20getStr1%28%27%22title%22%3A%22%27%2C%27%22%2C%27%2C%24cekvoucher%2C%2212%22%29%3B%0A%20%20%20%20%20%20%20%20%24voucher13%20%3D%20getStr1%28%27%22title%22%3A%22%27%2C%27%22%2C%27%2C%24cekvoucher%2C%2213%22%29%3B%0A%20%20%20%20%20%20%20%20%24voucher14%20%3D%20getStr1%28%27%22title%22%3A%22%27%2C%27%22%2C%27%2C%24cekvoucher%2C%2214%22%29%3B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22green%22%2C%22%20Total%20voucher%20%22.%24total.%22%20%3A%20%22%29%3B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22green%22%2C%22%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%201.%20%22.%24voucher1%29%3B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22green%22%2C%22%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%202.%20%22.%24voucher2%29%3B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22green%22%2C%22%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%203.%20%22.%24voucher3%29%3B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22green%22%2C%22%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%204.%20%22.%24voucher4%29%3B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22green%22%2C%22%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%205.%20%22.%24voucher5%29%3B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22green%22%2C%22%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%206.%20%22.%24voucher6%29%3B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22green%22%2C%22%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%207.%20%22.%24voucher7%29%3B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22green%22%2C%22%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%208.%20%22.%24voucher8%29%3B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22green%22%2C%22%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%209.%20%22.%24voucher9%29%3B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22green%22%2C%22%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2010.%20%22.%24voucher10%29%3B%0A%09echo%20%22%5Cn%22.color%28%22green%22%2C%22%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2011.%20%22.%24voucher11%29%3B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22green%22%2C%22%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2012.%20%22.%24voucher12%29%3B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22green%22%2C%22%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2013.%20%22.%24voucher13%29%3B%0A%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22green%22%2C%22%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2014.%20%22.%24voucher14%29%3B%0A%20%20%20%20%20%20%20%20echo%22%5Cn%22%3B%0A%20%20%20%20%20%20%20%20%24expired1%20%3D%20getStr1%28%27%22expiry_date%22%3A%22%27%2C%27%22%27%2C%24cekvoucher%2C%271%27%29%3B%0A%20%20%20%20%20%20%20%20%24expired2%20%3D%20getStr1%28%27%22expiry_date%22%3A%22%27%2C%27%22%27%2C%24cekvoucher%2C%272%27%29%3B%0A%20%20%20%20%20%20%20%20%24expired3%20%3D%20getStr1%28%27%22expiry_date%22%3A%22%27%2C%27%22%27%2C%24cekvoucher%2C%273%27%29%3B%0A%20%20%20%20%20%20%20%20%24expired4%20%3D%20getStr1%28%27%22expiry_date%22%3A%22%27%2C%27%22%27%2C%24cekvoucher%2C%274%27%29%3B%0A%20%20%20%20%20%20%20%20%24expired5%20%3D%20getStr1%28%27%22expiry_date%22%3A%22%27%2C%27%22%27%2C%24cekvoucher%2C%275%27%29%3B%0A%20%20%20%20%20%20%20%20%24expired6%20%3D%20getStr1%28%27%22expiry_date%22%3A%22%27%2C%27%22%27%2C%24cekvoucher%2C%276%27%29%3B%0A%20%20%20%20%20%20%20%20%24expired7%20%3D%20getStr1%28%27%22expiry_date%22%3A%22%27%2C%27%22%27%2C%24cekvoucher%2C%277%27%29%3B%0A%20%20%20%20%20%20%20%20%24expired8%20%3D%20getStr1%28%27%22expiry_date%22%3A%22%27%2C%27%22%27%2C%24cekvoucher%2C%278%27%29%3B%0A%20%20%20%20%20%20%20%20%24expired9%20%3D%20getStr1%28%27%22expiry_date%22%3A%22%27%2C%27%22%27%2C%24cekvoucher%2C%279%27%29%3B%0A%20%20%20%20%20%20%20%20%24expired10%20%3D%20getStr1%28%27%22expiry_date%22%3A%22%27%2C%27%22%27%2C%24cekvoucher%2C%2710%27%29%3B%0A%20%20%20%20%20%20%20%20%24expired11%20%3D%20getStr1%28%27%22expiry_date%22%3A%22%27%2C%27%22%27%2C%24cekvoucher%2C%2711%27%29%3B%0A%20%20%20%20%20%20%20%20%24expired12%20%3D%20getStr1%28%27%22expiry_date%22%3A%22%27%2C%27%22%27%2C%24cekvoucher%2C%2712%27%29%3B%0A%20%20%20%20%20%20%20%20%24expired13%20%3D%20getStr1%28%27%22expiry_date%22%3A%22%27%2C%27%22%27%2C%24cekvoucher%2C%2713%27%29%3B%0A%09%24expired14%20%3D%20getStr1%28%27%22expiry_date%22%3A%22%27%2C%27%22%27%2C%24cekvoucher%2C%2714%27%29%3B%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24ch%20%3D%20curl_init%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20curl_setopt%28%24ch%2C%20CURLOPT_RETURNTRANSFER%2C%201%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20curl_setopt%28%24ch%2C%20CURLOPT_URL%2C%20%24url%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20curl_setopt%28%24ch%2C%20CURLOPT_POSTFIELDS%2C%20%24post%20%29%3B%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20curl_setopt%28%24ch%2C%20CURLOPT_SSL_VERIFYPEER%2C%20false%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24datas%20%3D%20curl_exec%28%24ch%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24error%20%3D%20curl_error%28%24ch%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24status%20%3D%20curl_getinfo%28%24ch%2C%20CURLINFO_HTTP_CODE%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20curl_close%28%24ch%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24debug%5B%27text%27%5D%20%3D%20%24pesan%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24debug%5B%27respon%27%5D%20%3D%20json_decode%28%24datas%2C%20true%29%3B%0A%20%20%20%20%20%20%20%20%20setpin%3A%0A%20%20%20%20%20%20%20%20%20echo%20%22%5Cn%22.color%28%22yellow%22%2C%22SETPIN..%21%21%21%3A%20y%2Fn%20%22%29%3B%0A%20%20%20%20%20%20%20%20%20%24pilih1%20%3D%20trim%28fgets%28STDIN%29%29%3B%0A%20%20%20%20%20%20%20%20%20if%28%24pilih1%20%3D%3D%20%22y%22%20%7C%7C%20%24pilih1%20%3D%3D%20%22Y%22%29%7B%0A%20%20%20%20%20%20%20%20%20%2F%2Fif%28%24pilih1%20%3D%3D%20%22y%22%20%26%26%20strpos%28%24no%2C%20%22628%22%29%29%7B%0A%20%20%20%20%20%20%20%20%20echo%20color%28%22white%22%2C%22%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%20PIN%20MU%20%3D%20123789%20%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%22%29.%22%5Cn%22%3B%0A%20%20%20%20%20%20%20%20%20%24data2%20%3D%20%27%7B%22pin%22%3A%22123789%22%7D%27%3B%0A%20%20%20%20%20%20%20%20%20%24getotpsetpin%20%3D%20request%28%22%2Fwallet%2Fpin%22%2C%20%24token%2C%20%24data2%2C%20null%2C%20null%2C%20%24uuid%29%3B%0A%20%20%20%20%20%20%20%20%20echo%20%22Otp%20pin%3A%20%22%3B%0A%20%20%20%20%20%20%20%20%20%24otpsetpin%20%3D%20trim%28fgets%28STDIN%29%29%3B%0A%20%20%20%20%20%20%20%20%20%24verifotpsetpin%20%3D%20request%28%22%2Fwallet%2Fpin%22%2C%20%24token%2C%20%24data2%2C%20null%2C%20%24otpsetpin%2C%20%24uuid%29%3B%0A%20%20%20%20%20%20%20%20%20echo%20%24verifotpsetpin%3B%0A%20%20%20%20%20%20%20%20%20%7Delse%20if%28%24pilih1%20%3D%3D%20%22n%22%20%7C%7C%20%24pilih1%20%3D%3D%20%22N%22%29%7B%0A%20%20%20%20%20%20%20%20%20die%28%29%3B%0A%20%20%20%20%20%20%20%20%20%7Delse%7B%0A%20%20%20%20%20%20%20%20%20echo%20color%28%22red%22%2C%22-%5D%20GAGAL%21%21%21%5Cn%22%29%3B%0A%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%7Delse%7B%0A%20%20%20%20%20%20%20%20%20echo%20color%28%22red%22%2C%22-%5D%20OTP%20SALAH%22%29%3B%0A%20%20%20%20%20%20%20%20%20echo%22%5Cn%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%5Cn%5Cn%22%3B%0A%20%20%20%20%20%20%20%20%20echo%20color%28%22red%22%2C%22%21%5D%20INPUT%20ULANG..%5Cn%22%29%3B%0A%20%20%20%20%20%20%20%20%20goto%20otp%3B%0A%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%7Delse%7B%0A%20%20%20%20%20%20%20%20%20echo%20color%28%22red%22%2C%22-%5D%20NOMOR%20SALAH%2FSUDAH%20TERDAFTAR%22%29%3B%0A%20%20%20%20%20%20%20%20%20echo%22%5Cn%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%E2%96%AC%5Cn%5Cn%22%3B%0A%20%20%20%20%20%20%20%20%20echo%20color%28%22red%22%2C%22%21%5D%20MASUKAN%20LAGI%5Cn%22%29%3B%0A%20%20%20%20%20%20%20%20%20goto%20ulang%3B%0A%20%20%20%20%20%20%20%20%20%7D%0A%2F%2F%20%20%7D
+<?php
+date_default_timezone_set('Asia/Jakarta');
+include "function.php";
+ulang:
+// function change(){
+echo color("green","[]      BISMILLAHIRRAHMANIRRAHIM      []\n");
+echo color("yellow","[]          BY : HERUTOK              []\n");
+echo color("green","[]  Time  : ".date('[d-m-Y] [H:i:s]')."   []\n");
+echo color("yellow","[] Format Penulisan Nomor 62xxxxxxxx  []\n");
+        $nama = nama();
+        $email = str_replace(" ", "", $nama) . mt_rand(100, 999);
+        echo color("white"," NOMOR  : ");
+        // $no = trim(fgets(STDIN));
+        $nohp = trim(fgets(STDIN));
+        $nohp = str_replace("62","62",$nohp);
+        $nohp = str_replace("(","",$nohp);
+        $nohp = str_replace(")","",$nohp);
+        $nohp = str_replace("-","",$nohp);
+        $nohp = str_replace(" ","",$nohp);
+
+        if (!preg_match('/[^+0-9]/', trim($nohp))) {
+            if (substr(trim($nohp),0,3)=='62') {
+                $hp = trim($nohp);
+            }
+            else if (substr(trim($nohp),0,1)=='0') {
+                $hp = '62'.substr(trim($nohp),1);
+        }
+         elseif(substr(trim($nohp), 0, 2)=='62'){
+            $hp = '6'.substr(trim($nohp), 1);
+        }
+        else{
+            $hp = '1'.substr(trim($nohp),0,13);
+        }
+    }
+        $data = '{"email":"'.$email.'@yahoo.com","name":"'.$nama.'","phone":"+'.$hp.'","signed_up_country":"ID"}';
+        $register = request("/v5/customers", null, $data);
+        if(strpos($register, '"otp_token"')){
+        $otptoken = getStr('"otp_token":"','"',$register);
+        echo color("white"," KODE OTP..")."\n";
+        otp:
+        echo color("white"," Otp : ");
+        $otp = trim(fgets(STDIN));
+        $data1 = '{"client_name":"gojek:cons:android","data":{"otp":"' . $otp . '","otp_token":"' . $otptoken . '"},"client_secret":"83415d06-ec4e-11e6-a41b-6c40088ab51e"}';
+        $verif = request("/v5/customers/phone/verify", null, $data1);
+        if(strpos($verif, '"access_token"')){
+        echo color("white","BERHASIL MENDAFTAR\n");
+        $token = getStr('"access_token":"','"',$verif);
+        $uuid = getStr('"resource_owner_id":',',',$verif);
+        echo color("white","+] Your access token : ".$token."\n\n");
+        save("token.txt",$token); 
+        echo color("white","\n▬▬▬▬▬▬▬▬▬▬▬▬CLAIM VOUCHER▬▬▬▬▬▬▬▬▬▬▬▬");
+        echo "\n".color("white","CLAIM VOUCHER 1..");
+        echo "\n".color("white"," Please wait");
+        for($a=1;$a<=3;$a++){
+        echo color("white",".");
+        sleep(35);
+        }
+        $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD2206"}');
+        $message = fetch_value($code1,'"message":"','"');
+        if(strpos($code1, 'Promo kamu sudah bisa dipakai')){
+        echo "\n".color("green","Message: ".$message);
+        goto gocar;
+        }else{
+        echo "\n".color("white"," Message: ".$message);
+	gocar:
+        echo "\n".color("white"," CLAIM VOUCHER 2.. ");
+        echo "\n".color("white"," Please wait");
+        for($a=1;$a<=3;$a++){
+        echo color("white",".");
+        sleep(5);
+        }
+        $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD2206"}');
+        $message = fetch_value($code1,'"message":"','"');
+        if(strpos($code1, 'Promo kamu sudah bisa dipakai.')){
+        echo "\n".color("green","Message: ".$message);
+        goto gofood;
+        }else{
+        echo "\n".color("white"," Message: ".$message);
+        gofood:
+        echo "\n".color("white"," CLAIM VOUCHER 3..");
+        echo "\n".color("white"," Please wait");
+        for($a=1;$a<=3;$a++){
+        echo color("white",".");
+        sleep(0);
+        }
+        $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":""}');
+        $message = fetch_value($code1,'"message":"','"');
+        echo "\n".color("white"," Message: ".$message);
+        sleep(2);
+        $cekvoucher = request('/gopoints/v3/wallet/vouchers?limit=14&page=1', $token);
+        $total = fetch_value($cekvoucher,'"total_vouchers":',',');
+        $voucher1 = getStr1('"title":"','",',$cekvoucher,"1");
+        $voucher2 = getStr1('"title":"','",',$cekvoucher,"2");
+        $voucher3 = getStr1('"title":"','",',$cekvoucher,"3");
+        $voucher4 = getStr1('"title":"','",',$cekvoucher,"4");
+        $voucher5 = getStr1('"title":"','",',$cekvoucher,"5");
+        $voucher6 = getStr1('"title":"','",',$cekvoucher,"6");
+        $voucher7 = getStr1('"title":"','",',$cekvoucher,"7");
+        $voucher8 = getStr1('"title":"','",',$cekvoucher,"8");
+        $voucher9 = getStr1('"title":"','",',$cekvoucher,"9");
+        $voucher10 = getStr1('"title":"','",',$cekvoucher,"10");
+        $voucher11 = getStr1('"title":"','",',$cekvoucher,"11");
+        $voucher12 = getStr1('"title":"','",',$cekvoucher,"12");
+        $voucher13 = getStr1('"title":"','",',$cekvoucher,"13");
+        $voucher14 = getStr1('"title":"','",',$cekvoucher,"14");
+        echo "\n".color("green"," Total voucher ".$total." : ");
+        echo "\n".color("green","                     1. ".$voucher1);
+        echo "\n".color("green","                     2. ".$voucher2);
+        echo "\n".color("green","                     3. ".$voucher3);
+        echo "\n".color("green","                     4. ".$voucher4);
+        echo "\n".color("green","                     5. ".$voucher5);
+        echo "\n".color("green","                     6. ".$voucher6);
+        echo "\n".color("green","                     7. ".$voucher7);
+        echo "\n".color("green","                     8. ".$voucher8);
+        echo "\n".color("green","                     9. ".$voucher9);
+        echo "\n".color("green","                     10. ".$voucher10);
+	echo "\n".color("green","                     11. ".$voucher11);
+        echo "\n".color("green","                     12. ".$voucher12);
+        echo "\n".color("green","                     13. ".$voucher13);
+        echo "\n".color("green","                     14. ".$voucher14);
+        echo"\n";
+        $expired1 = getStr1('"expiry_date":"','"',$cekvoucher,'1');
+        $expired2 = getStr1('"expiry_date":"','"',$cekvoucher,'2');
+        $expired3 = getStr1('"expiry_date":"','"',$cekvoucher,'3');
+        $expired4 = getStr1('"expiry_date":"','"',$cekvoucher,'4');
+        $expired5 = getStr1('"expiry_date":"','"',$cekvoucher,'5');
+        $expired6 = getStr1('"expiry_date":"','"',$cekvoucher,'6');
+        $expired7 = getStr1('"expiry_date":"','"',$cekvoucher,'7');
+        $expired8 = getStr1('"expiry_date":"','"',$cekvoucher,'8');
+        $expired9 = getStr1('"expiry_date":"','"',$cekvoucher,'9');
+        $expired10 = getStr1('"expiry_date":"','"',$cekvoucher,'10');
+        $expired11 = getStr1('"expiry_date":"','"',$cekvoucher,'11');
+        $expired12 = getStr1('"expiry_date":"','"',$cekvoucher,'12');
+        $expired13 = getStr1('"expiry_date":"','"',$cekvoucher,'13');
+	$expired14 = getStr1('"expiry_date":"','"',$cekvoucher,'14');
+      
+                                        $ch = curl_init();
+                                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                                        curl_setopt($ch, CURLOPT_URL, $url);
+                                        curl_setopt($ch, CURLOPT_POSTFIELDS, $post );   
+                                        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+                                        $datas = curl_exec($ch);
+                                        $error = curl_error($ch);
+                                        $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+                                        curl_close($ch);
+                                        $debug['text'] = $pesan;
+                                        $debug['respon'] = json_decode($datas, true);
+         setpin:
+         echo "\n".color("yellow","SETPIN..!!!: y/n ");
+         $pilih1 = trim(fgets(STDIN));
+         if($pilih1 == "y" || $pilih1 == "Y"){
+         //if($pilih1 == "y" && strpos($no, "628")){
+         echo color("white","▬▬▬▬▬▬▬▬▬▬▬▬▬▬ PIN MU = 123789 ▬▬▬▬▬▬▬▬▬▬▬▬")."\n";
+         $data2 = '{"pin":"123789"}';
+         $getotpsetpin = request("/wallet/pin", $token, $data2, null, null, $uuid);
+         echo "Otp pin: ";
+         $otpsetpin = trim(fgets(STDIN));
+         $verifotpsetpin = request("/wallet/pin", $token, $data2, null, $otpsetpin, $uuid);
+         echo $verifotpsetpin;
+         }else if($pilih1 == "n" || $pilih1 == "N"){
+         die();
+         }else{
+         echo color("red","-] GAGAL!!!\n");
+         }
+         }
+         }
+         }else{
+         echo color("red","-] OTP SALAH");
+         echo"\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n";
+         echo color("red","!] INPUT ULANG..\n");
+         goto otp;
+         }
+         }else{
+         echo color("red","-] NOMOR SALAH/SUDAH TERDAFTAR");
+         echo"\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n";
+         echo color("red","!] MASUKAN LAGI\n");
+         goto ulang;
+         }
+//  }
